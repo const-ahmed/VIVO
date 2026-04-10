@@ -76,3 +76,13 @@
     height: 40px;
   }
 }
+
+@media (max-width: 420px) {
+  .item {
+    padding: 0 24px;
+  }
+
+  .logo {
+    height: 32px;
+  }
+}
