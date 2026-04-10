@@ -1,0 +1,133 @@
+.section {
+  padding: clamp(64px, 7vw, 112px) 0;
+  background: var(--white);
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+  padding: 0 max(24px, 5vw);
+}
+
+.title {
+  font-size: clamp(26px, 2.2vw, 40px);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
+  color: var(--gray-500);
+  max-width: 480px;
+}
+
+.subtitle em {
+  font-style: italic;
+}
+
+/* Rows */
+.rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+/* Pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  padding: 11px 22px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-dark);
+  white-space: nowrap;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.pillDark {
+  background: #111214;
+  border-color: #111214;
+  color: var(--white);
+}
+
+/* Quotation marks */
+.q {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1;
+}
+
+.pill .q:first-child {
+  margin-right: 5px;
+}
+
+.pill .q:last-child {
+  margin-left: 5px;
+}
+
+/* Ghost spacer pill */
+.ghost {
+  border-radius: 999px;
+  border: 1.5px solid #e8e8e8;
+  background: transparent;
+  padding: 11px 50px;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+@media (max-width: 900px) {
+  .ghost {
+    display: none;
+  }
+
+  .row {
+    flex-wrap: wrap;
+    padding: 0 max(24px, 5vw);
+  }
+
+  .pill {
+    font-size: 13px;
+    padding: 9px 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .q {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,298 @@
+.section {
+  padding: clamp(64px, 7vw, 112px) 0;
+  background: var(--gray-50);
+}
+
+.container {
+  width: 100%;
+  padding: 0 max(24px, 5vw);
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(48px, 5vw, 80px);
+}
+
+.title {
+  font-size: clamp(26px, 2.2vw, 40px);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
+  color: var(--gray-500);
+  max-width: 520px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+
+/* Chart */
+.left {
+  display: flex;
+  justify-content: center;
+}
+
+.chart {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow-md);
+}
+
+.chartHeader {
+  margin-bottom: 24px;
+}
+
+.chartTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.chartSub {
+  font-size: 12px;
+  color: var(--gray-400);
+}
+
+.chartBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 200px;
+  margin-bottom: 12px;
+}
+
+.chartBarCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  height: 100%;
+}
+
+.barWrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: -24px;
+  background: var(--text-dark);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid transparent;
+  border-top-color: var(--text-dark);
+}
+
+.bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background: #e5e7eb;
+  transition: height 0.4s ease;
+  min-height: 4px;
+}
+
+.barActive {
+  background: var(--green);
+}
+
+.barLabel {
+  font-size: 9px;
+  color: var(--gray-400);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+}
+
+.chartLegend {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+/* Features list */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.featureItem {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.featureItem:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.featureNum {
+  width: 28px;
+  height: 28px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.featureContent {
+  flex: 1;
+}
+
+.featureTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.infoIcon {
+  color: var(--gray-400);
+  display: flex;
+  align-items: center;
+}
+
+.featureDesc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--gray-500);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .left {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .chart {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 64px; padding-bottom: 64px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .chart {
+    padding: 20px;
+  }
+
+  .chartBars {
+    height: 160px;
+    gap: 6px;
+  }
+
+  .barLabel {
+    font-size: 8px;
+  }
+
+  .featureItem {
+    gap: 14px;
+  }
+
+  .featureTitle {
+    font-size: 14px;
+  }
+
+  .featureDesc {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .section {
+    padding-top: 48px; padding-bottom: 48px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .right {
+    gap: 24px;
+  }
+}

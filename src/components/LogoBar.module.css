@@ -1,0 +1,77 @@
+.section {
+  background: #ffffff;
+  padding: clamp(24px, 3vw, 40px) 0;
+  overflow: hidden;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-400);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 0 max(24px, 5vw);
+}
+
+/* Overflow mask — fades edges */
+.track {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll 32s linear infinite;
+}
+
+.inner:hover {
+  animation-play-state: paused;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48px;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  transition: opacity 0.2s;
+}
+
+@media (max-width: 768px) {
+  .item {
+    padding: 0 32px;
+  }
+
+  .logo {
+    height: 28px;
+  }
+}
