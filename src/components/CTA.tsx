@@ -14,7 +14,7 @@ const CTA: React.FC = () => {
           </p>
           <div className={styles.buttons}>
             <Button variant="primary" size="lg">Schedule a call</Button>
-            <Button variant="outline" size="lg">Contact us</Button>
+            <Button variant="outlineLight" size="lg">Contact us</Button>
           </div>
         </div>
 

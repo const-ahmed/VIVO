@@ -66,3 +66,14 @@
   background: #222;
   border-color: #222;
 }
+
+.outlineLight {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.outlineLight:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
