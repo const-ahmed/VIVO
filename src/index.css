@@ -78,11 +78,11 @@ button {
   background: none;
 }
 
-h1 {
+h1, h2 {
   font-family: var(--font-display);
   font-style: italic;
 }
 
-h2, h3 {
+h3 {
   font-family: var(--font-heading);
 }

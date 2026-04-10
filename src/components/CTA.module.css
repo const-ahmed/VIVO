@@ -1,6 +1,6 @@
 .section {
   padding: clamp(64px, 7vw, 112px) 0;
-  background: var(--gray-50);
+  background: var(--black);
 }
 
 .container {
@@ -24,7 +24,7 @@
 .title {
   font-size: clamp(26px, 2.2vw, 40px);
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--white);
   letter-spacing: -1px;
   margin: 0;
   line-height: 1.15;
@@ -33,7 +33,7 @@
 .subtitle {
   font-size: 15px;
   line-height: 1.65;
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.55);
   max-width: 400px;
 }
 
@@ -67,7 +67,7 @@
 .statDesc {
   font-size: 15px;
   line-height: 1.6;
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 @media (max-width: 1024px) {
