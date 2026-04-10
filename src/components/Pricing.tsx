@@ -50,6 +50,10 @@ const Pricing: React.FC = () => {
         </div>
 
         <div className={styles.toggle}>
+          <div
+            className={styles.toggleSlider}
+            style={{ transform: isYearly ? 'translateX(100%)' : 'translateX(0)' }}
+          />
           <button
             className={`${styles.toggleBtn} ${!isYearly ? styles.toggleBtnActive : ''}`}
             onClick={() => setIsYearly(false)}
@@ -61,7 +65,12 @@ const Pricing: React.FC = () => {
             onClick={() => setIsYearly(true)}
           >
             Pay yearly
-            {isYearly && <span className={styles.saveBadge}>Save 20%</span>}
+            <span
+              className={styles.saveBadge}
+              style={{ opacity: isYearly ? 1 : 0, transform: isYearly ? 'scale(1)' : 'scale(0.8)' }}
+            >
+              Save 20%
+            </span>
           </button>
         </div>
 

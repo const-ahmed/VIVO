@@ -4,6 +4,8 @@
 }
 
 .container {
+  max-width: 1360px;
+  margin: 0 auto;
   width: 100%;
   padding: 0 max(24px, 5vw);
   box-sizing: border-box;
@@ -32,37 +34,58 @@
   color: var(--gray-500);
 }
 
+/* Toggle wrapper — positions the badge outside the pill */
+.toggleWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto 48px;
+}
+
 /* Toggle */
 .toggle {
+  position: relative;
   display: inline-flex;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
   padding: 4px;
-  margin: 0 auto 48px;
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  margin: 0 auto 48px;
+}
+
+/* Sliding pill indicator */
+.toggleSlider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: var(--black);
+  border-radius: var(--radius-full);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .toggleBtn {
+  position: relative;
+  z-index: 1;
   font-size: 13px;
   font-weight: 500;
-  padding: 8px 20px;
+  width: 130px;
+  padding: 9px 0;
   border-radius: var(--radius-full);
   color: var(--gray-500);
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .toggleBtnActive {
-  background: var(--black);
   color: var(--white);
 }
 
@@ -71,8 +94,16 @@
   font-weight: 600;
   background: var(--green);
   color: white;
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: 10px;
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  white-space: nowrap;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 /* Plans */
@@ -240,7 +271,8 @@
 
 @media (max-width: 640px) {
   .section {
-    padding-top: 64px; padding-bottom: 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   .title {
@@ -267,7 +299,8 @@
 
 @media (max-width: 420px) {
   .section {
-    padding-top: 48px; padding-bottom: 48px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   .plans {

@@ -6,11 +6,12 @@
 
 .top {
   width: 100%;
+  max-width: 1360px;
+  margin: 0 auto 48px;
   padding: 0 max(24px, 5vw);
   box-sizing: border-box;
   display: flex;
   gap: 80px;
-  margin-bottom: 48px;
 }
 
 .brand {
@@ -66,6 +67,8 @@
 
 .bottom {
   width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
   box-sizing: border-box;
   padding: 24px max(24px, 5vw) 0;
   display: flex;

@@ -6,6 +6,8 @@
 
 .container {
   width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
   padding: 0 max(24px, 5vw);
   box-sizing: border-box;
   display: grid;

@@ -4,6 +4,8 @@
 }
 
 .container {
+  max-width: 1360px;
+  margin: 0 auto;
   width: 100%;
   padding: 0 max(24px, 5vw);
   box-sizing: border-box;
