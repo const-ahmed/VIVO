@@ -2,11 +2,12 @@ import React from 'react';
 import Badge from './ui/Badge';
 import styles from './WhyChooseUs.module.css';
 
+// Roles that span Vivo's actual specialisms
 const VACANCY_ITEMS = [
-  { title: 'React Developer', color: '#F59E0B', badge: 'Active', active: true },
-  { title: 'UI/UX Designer', color: '#7C3AED', badge: 'Paused', active: false },
-  { title: 'Data Analyst', color: '#10B981', badge: 'Active', active: true },
-  { title: 'DevOps Engineer', color: '#F97316', badge: 'Active', active: true },
+  { title: 'Head of Digital',    color: '#F59E0B', badge: 'Active',  active: true  },
+  { title: 'Finance Manager',    color: '#7C3AED', badge: 'Active',  active: true  },
+  { title: 'HR Business Partner',color: '#10B981', badge: 'Active',  active: true  },
+  { title: 'Sales Director',     color: '#F97316', badge: 'Filled',  active: false },
 ];
 
 const VacancyMockup: React.FC = () => (
@@ -23,7 +24,7 @@ const VacancyMockup: React.FC = () => (
         </div>
         <div className={styles.mockupText}>
           <div className={styles.mockupTitle}>{title}</div>
-          <div className={styles.mockupSub}>12 applications · Remote</div>
+          <div className={styles.mockupSub}>UK · Permanent</div>
         </div>
         <div
           className={styles.mockupBadge}
@@ -42,14 +43,14 @@ const VacancyMockup: React.FC = () => (
 const CandidateMockup: React.FC = () => (
   <div className={styles.mockup}>
     <div className={styles.candidateCardDark}>
-      <div className={styles.candidateAvatarDark}>NT</div>
+      <div className={styles.candidateAvatarDark}>AI</div>
       <div className={styles.candidateInfoDark}>
-        <div className={styles.candidateNameDark}>Nicolas Themis</div>
-        <div className={styles.candidateRoleDark}>UI/UX Designer · New York</div>
+        <div className={styles.candidateNameDark}>Antonios Ilias</div>
+        <div className={styles.candidateRoleDark}>Head of Digital · London</div>
       </div>
     </div>
     <div className={styles.candidateQuote}>
-      Nicolas has made us his preferred choice, benefiting from our innovative solutions...
+      "Her knack for understanding what we need and delivering the right fit is unmatched. Prompt, professional, and a pleasure to work with."
     </div>
     <div className={styles.candidateActionsRow}>
       <div className={styles.actionBtnDark} style={{ background: 'var(--green)', color: 'var(--black)' }}>Shortlist</div>
@@ -60,16 +61,16 @@ const CandidateMockup: React.FC = () => (
 
 const HiringMockup: React.FC = () => {
   const stages = [
-    { label: 'Applied', count: 48, pct: 100 },
-    { label: 'Screening', count: 24, pct: 50 },
-    { label: 'Interview', count: 12, pct: 25 },
-    { label: 'Offer', count: 4, pct: 8 },
-    { label: 'Hired', count: 2, pct: 4 },
+    { label: 'Applied',    count: 48, pct: 100 },
+    { label: 'Screening',  count: 24, pct: 50  },
+    { label: 'Interview',  count: 12, pct: 25  },
+    { label: 'Offer',      count:  4, pct:  8  },
+    { label: 'Placed',     count:  2, pct:  4  },
   ];
   return (
     <div className={`${styles.mockup} ${styles.hiringMockup}`}>
       <div className={styles.mockupHeader}>
-        <span className={styles.mockupHeadTitle}>Hiring Stages</span>
+        <span className={styles.mockupHeadTitle}>Search Progress</span>
       </div>
       <div className={styles.stageList}>
         {stages.map((s) => (
@@ -86,25 +87,25 @@ const HiringMockup: React.FC = () => {
   );
 };
 
-const FEATURES = [
+const SERVICES = [
   {
-    id: 'vacancies',
-    title: 'Vacancies Management',
-    description: 'Simplify your hiring process with our intuitive job vacancies management tool.',
+    id: 'permanent',
+    title: 'Permanent Staffing',
+    description: 'We connect you with exceptional talent in technology & digital, HR & finance, and sales & marketing. Our recruiters work closely with you to attract and retain high-calibre candidates both active and passive – while showcasing your employer brand.',
     Mockup: VacancyMockup,
     dark: false,
   },
   {
-    id: 'candidates',
-    title: 'Candidates Management',
-    description: 'Efficiently organize and assess candidate profiles with our platform.',
+    id: 'temporary',
+    title: 'Temporary Staffing',
+    description: 'Flexible, compliant, and fast we provide top-tier contractors to power business-critical projects. Our expert consultants tailor each search to your needs, ensuring you get the right talent, right when you need it.',
     Mockup: CandidateMockup,
     dark: true,
   },
   {
-    id: 'hiring',
-    title: 'Hiring Management',
-    description: 'Optimize your recruitment workflow with our efficient hiring management solution.',
+    id: 'demand',
+    title: 'Talent on Demand',
+    description: 'A flexible, scalable, and cost-effective solution that integrates seamlessly with your business. We embed ourselves in your team to deliver workforce strategies, attract top talent, and support everything from single projects to full outsourcing.',
     Mockup: HiringMockup,
     dark: false,
   },
@@ -115,16 +116,16 @@ const WhyChooseUs: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge>Why Choose Us</Badge>
-          <h2 className={styles.title}>Preferred Option Among Recruiters</h2>
+          <Badge>Our Services</Badge>
+          <h2 className={styles.title}>Full-Service Recruitment, Built Around You</h2>
           <p className={styles.subtitle}>
-            Join the ranks of recruiters who have made us their preferred choice, benefiting from
-            our innovative solutions and unparalleled support.
+            From permanent hires to contract teams and senior appointments, Vivo delivers expert
+            recruitment tailored to your business and sector.
           </p>
         </div>
 
         <div className={styles.grid}>
-          {FEATURES.map(({ id, title, description, Mockup, dark }) => (
+          {SERVICES.map(({ id, title, description, Mockup, dark }) => (
             <div key={id} className={`${styles.card} ${dark ? styles.cardDark : ''}`}>
               <div className={`${styles.cardMockup} ${dark ? styles.cardMockupDark : ''}`}>
                 <Mockup />

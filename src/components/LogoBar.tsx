@@ -25,7 +25,7 @@ const LogoBar: React.FC = () => {
 
   return (
     <section className={styles.section}>
-      <p className={styles.label}>Used by 1,000+ recruitment agencies worldwide</p>
+      <p className={styles.label}>Trusted by businesses across the UK and Europe</p>
       <div className={styles.track}>
         <div className={styles.inner}>
           {doubled.map((logo, i) => (

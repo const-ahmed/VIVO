@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Footer.module.css';
 
-const SERVICES = ['Vacancies Management', 'Candidates Management', 'Hiring Management'];
-const FEATURES = ['Deep Analytics Insight', 'Employment Portal Network', 'Skill Assessment Tools'];
+const SERVICES = ['Permanent Recruitment', 'Contract & Interim', 'Executive Search'];
+const FEATURES = ['Tech & Digital', 'HR & Operations', 'Sales & Marketing', 'Banking & Finance'];
 const RESOURCES = ['Blogs', 'Help Docs', 'Newsletter'];
 
 const TwitterIcon = () => (
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className={styles.column}>
-            <h4 className={styles.colTitle}>Features</h4>
+            <h4 className={styles.colTitle}>Specialisms</h4>
             <ul className={styles.colLinks}>
               {FEATURES.map((f) => (
                 <li key={f}><a href="#">{f}</a></li>
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
         </div>
 
         <p className={styles.copyright}>
-          © 2024 Hirestream LTD. All rights reserved
+          © 2024 Vivo Talent Solutions Ltd. All rights reserved
         </p>
 
         <div className={styles.legal}>

@@ -7,12 +7,13 @@ const CTA: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.left}>
-          <h2 className={styles.title}>Supercharge Your Hiring Today</h2>
+          <h2 className={styles.title}>Ready to Find Your Next Great Hire?</h2>
           <p className={styles.subtitle}>
-            Optimize recruitment outcomes with our advanced tools. Get started today!
+            Get in touch with our team today. Whether you need a permanent hire, a contract
+            team, or an executive search — we're ready to help.
           </p>
           <div className={styles.buttons}>
-            <Button variant="primary" size="lg">Get started</Button>
+            <Button variant="primary" size="lg">Schedule a call</Button>
             <Button variant="outline" size="lg">Contact us</Button>
           </div>
         </div>
@@ -21,7 +22,7 @@ const CTA: React.FC = () => {
           <div className={styles.stat}>
             <span className={styles.statNumber}>200%</span>
             <p className={styles.statDesc}>
-              Faster hiring process guaranteed with our assistance
+              Faster time-to-hire compared to recruiting alone — proven across our client base
             </p>
           </div>
         </div>

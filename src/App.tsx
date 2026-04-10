@@ -4,9 +4,10 @@ import Hero from './components/Hero';
 import LogoBar from './components/LogoBar';
 import WhyChooseUs from './components/WhyChooseUs';
 import Features from './components/Features';
+import OurResults from './components/OurResults';
+import OurProcess from './components/OurProcess';
 import Testimonials from './components/Testimonials';
 import OurClients from './components/OurClients';
-import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
@@ -18,9 +19,10 @@ function App() {
       <LogoBar />
       <WhyChooseUs />
       <Features />
+      <OurResults />
+      <OurProcess />
       <Testimonials />
       <OurClients />
-      <Pricing />
       <CTA />
       <Footer />
     </div>

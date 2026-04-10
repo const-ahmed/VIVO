@@ -3,9 +3,9 @@ import Button from './ui/Button';
 import styles from './Navbar.module.css';
 
 const NAV_ITEMS = [
-  { label: 'Products', hasDropdown: true },
-  { label: 'Services', hasDropdown: true },
-  { label: 'Support', hasDropdown: false },
+  { label: 'Services', hasDropdown: false },
+  { label: 'Specialisms', hasDropdown: false },
+  { label: 'About', hasDropdown: false },
   { label: 'Pricing', hasDropdown: false },
 ];
 

@@ -15,21 +15,23 @@ const CHART_DATA = [
 const FEATURES = [
   {
     number: '01',
-    title: 'Deep Analytics Insight',
-    description:
-      'Dive into your data\'s depths and extract valuable insights with our deep analytics feature, facilitating agile responses and advantages.',
+    title: 'Tech & Digital',
+    description: 'Finding the best technology and digital talent from across the globe.',
   },
   {
     number: '02',
-    title: 'Employment Portal Network',
-    description:
-      'Maximize your performance with our platform, providing access to a comprehensive database of potential candidates for your clients.',
+    title: 'HR & Operations',
+    description: 'Providing highly talented HR & finance professionals across the UK.',
   },
   {
     number: '03',
-    title: 'Skill Assessment Tools',
-    description:
-      'Ensure precise candidate selection with our tailored assessment tool, enabling you to make informed hiring decisions confidently.',
+    title: 'Sales & Marketing',
+    description: 'Helping clients build their sales and marketing capability with the best talent.',
+  },
+  {
+    number: '04',
+    title: 'Banking & Finance',
+    description: 'Sourcing top-tier banking and financial services talent to support institutions across the UK.',
   },
 ];
 
@@ -39,8 +41,8 @@ const ChartMockup: React.FC = () => {
     <div className={styles.chart}>
       <div className={styles.chartHeader}>
         <div>
-          <div className={styles.chartTitle}>Market Rate Insights</div>
-          <div className={styles.chartSub}>View Designer salary rates in United States</div>
+          <div className={styles.chartTitle}>Salary Benchmarking</div>
+          <div className={styles.chartSub}>Current market rates for roles across the UK</div>
         </div>
       </div>
       <div className={styles.chartBars}>
@@ -78,11 +80,11 @@ const Features: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge>AI Features</Badge>
-          <h2 className={styles.title}>AI-Enhanced Excellence</h2>
+          <Badge>Our Specialisms</Badge>
+          <h2 className={styles.title}>Deep Expertise Across Key Sectors</h2>
           <p className={styles.subtitle}>
-            Experience unparalleled efficiency and precision as our AI-driven platform
-            leverages extensive data analysis to deliver optimal outcomes.
+            Our specialist consultants recruit exclusively within their sectors, giving you access
+            to networks and market knowledge built over years of focused work.
           </p>
         </div>
 
@@ -96,16 +98,7 @@ const Features: React.FC = () => {
               <div key={feature.number} className={styles.featureItem}>
                 <div className={styles.featureNum}>{feature.number}</div>
                 <div className={styles.featureContent}>
-                  <div className={styles.featureTitle}>
-                    {feature.title}
-                    <span className={styles.infoIcon}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="12" y1="16" x2="12" y2="12" />
-                        <line x1="12" y1="8" x2="12.01" y2="8" />
-                      </svg>
-                    </span>
-                  </div>
+                  <div className={styles.featureTitle}>{feature.title}</div>
                   <p className={styles.featureDesc}>{feature.description}</p>
                 </div>
               </div>

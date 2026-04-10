@@ -1,0 +1,186 @@
+.section {
+  padding: clamp(64px, 7vw, 112px) 0;
+  background: var(--white);
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 max(24px, 5vw);
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(48px, 5vw, 72px);
+}
+
+.title {
+  font-size: clamp(26px, 2.2vw, 40px);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
+  color: var(--gray-500);
+  max-width: 520px;
+}
+
+/* ── Desktop track: circles + connectors spanning full width ── */
+.track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.trackNum {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+}
+
+.connector {
+  flex: 1;
+  height: 1.5px;
+  background: var(--border);
+}
+
+/* ── Content grid: 4 perfectly equal columns ── */
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile circle — hidden on desktop */
+.mobileNum {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  margin-bottom: 14px;
+}
+
+.stepTitle {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 14px;
+}
+
+.stepList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.stepItem {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: clamp(12px, 0.95vw, 13px);
+  line-height: 1.5;
+  color: var(--gray-600);
+}
+
+.chevron {
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Tablet: 2×2 grid, hide track, show inline circles ── */
+@media (max-width: 1024px) {
+  .track {
+    display: none;
+  }
+
+  .mobileNum {
+    display: flex;
+  }
+
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 40px;
+  }
+}
+
+/* ── Large phone: tighten gap ── */
+@media (max-width: 768px) {
+  .content {
+    gap: 32px 24px;
+  }
+}
+
+/* ── Phone: single column ── */
+@media (max-width: 560px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+/* ── Small phone ── */
+@media (max-width: 380px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+  }
+
+  .stepItem {
+    font-size: 12px;
+  }
+
+  .mobileNum {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}

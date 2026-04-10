@@ -9,21 +9,21 @@ const Hero: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <Badge>Automated Recruitment</Badge>
+          <Badge>UK & Europe Recruitment</Badge>
 
           <h1 className={styles.headline}>
-            Find Talents With AI-Powered Platform
+            Connecting People, Fuelling Success
           </h1>
 
           <p className={styles.subtext}>
-            Experience seamless recruitment operations powered by cutting-edge AI
-            technology for efficient hiring outcomes. Drive your recruitment success
-            with our AI-driven tools.
+            Vivo helps companies across the UK and Europe find and keep the people
+            who drive their success. Permanent placements, contract teams, and
+            executive search — done properly.
           </p>
 
           <div className={styles.cta}>
-            <Button variant="primary" size="lg">Get started</Button>
-            <Button variant="outline" size="lg">Contact us</Button>
+            <Button variant="primary" size="lg">Get in touch</Button>
+            <Button variant="outline" size="lg">Our services</Button>
           </div>
 
           <div className={styles.social}>

@@ -37,7 +37,7 @@ const DashboardMockup: React.FC = () => {
             <span className={styles.dot} style={{ background: '#FEBC2E' }} />
             <span className={styles.dot} style={{ background: '#28C840' }} />
           </div>
-          <div className={styles.urlBar}>hirestream.io/dashboard</div>
+          <div className={styles.urlBar}>vivotalent.com/dashboard</div>
         </div>
 
         <div className={styles.dashboard}>
