@@ -116,7 +116,12 @@ const WhyChooseUs: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge>Our Services</Badge>
+          <Badge icon={
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          }>Our Services</Badge>
           <h2 className={styles.title}>Full-Service Recruitment, Built Around You</h2>
           <p className={styles.subtitle}>
             From permanent hires to contract teams and senior appointments, Vivo delivers expert

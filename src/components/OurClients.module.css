@@ -27,12 +27,12 @@
 }
 
 .headingText {
-  font-family: var(--font-heading);
-  font-size: clamp(18px, 2vw, 26px);
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 400;
   color: var(--text-dark);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
 .grid {

@@ -80,7 +80,13 @@ const Features: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge>Our Specialisms</Badge>
+          <Badge icon={
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          }>Our Specialisms</Badge>
           <h2 className={styles.title}>Deep Expertise Across Key Sectors</h2>
           <p className={styles.subtitle}>
             Our specialist consultants recruit exclusively within their sectors, giving you access

@@ -4,12 +4,16 @@ import styles from './Badge.module.css';
 interface BadgeProps {
   children: React.ReactNode;
   className?: string;
+  icon?: React.ReactNode;
 }
 
-const Badge: React.FC<BadgeProps> = ({ children, className = '' }) => {
+const Badge: React.FC<BadgeProps> = ({ children, className = '', icon }) => {
   return (
     <span className={`${styles.badge} ${className}`}>
-      <span style={{ opacity: 0.7 }}>✦</span> {children}
+      <span className={styles.icon}>
+        {icon ?? <span style={{ opacity: 0.7 }}>✦</span>}
+      </span>
+      {children}
     </span>
   );
 };

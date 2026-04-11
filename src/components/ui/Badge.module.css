@@ -13,3 +13,13 @@
   border-radius: var(--radius-full);
   padding: 5px 14px;
 }
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+}

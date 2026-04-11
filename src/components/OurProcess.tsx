@@ -58,7 +58,13 @@ const OurProcess: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge>Our Process</Badge>
+          <Badge icon={
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+              <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+              <rect x="9" y="3" width="6" height="4" rx="1"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          }>Our Process</Badge>
           <h2 className={styles.title}>How We Work</h2>
           <p className={styles.subtitle}>
             A structured, transparent approach that keeps you informed at every stage — from first brief to successful placement.

@@ -13,7 +13,11 @@ const OurResults: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge>Our Results</Badge>
+          <Badge icon={
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path d="M5 20h2v-8H5v8zm4 0h2V4H9v16zm4 0h2v-5h-2v5zm4 0h2v-11h-2v11z"/>
+            </svg>
+          }>Our Results</Badge>
           <h2 className={styles.title}>Numbers That Speak For Themselves</h2>
         </div>
         <div className={styles.grid}>

@@ -38,7 +38,11 @@ const Testimonials: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge>Testimonials</Badge>
+          <Badge icon={
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+          }>Testimonials</Badge>
           <h2 className={styles.title}>What Our Clients Say</h2>
           <p className={styles.subtitle}>
             Real feedback from the businesses and candidates we've worked with across the UK and Europe.
