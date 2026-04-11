@@ -2,6 +2,7 @@
   background: #ffffff;
   padding: clamp(36px, 4vw, 60px) 0;
   overflow: hidden;
+  width: 100%;
 }
 
 .label {
@@ -16,73 +17,45 @@
   padding: 0 max(24px, 5vw);
 }
 
-/* Overflow mask — fades edges */
+/* Edge fade mask */
 .track {
   overflow: hidden;
+  width: 100%;
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    black 6%,
+    black 94%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    black 6%,
+    black 94%,
     transparent 100%
   );
 }
 
-@keyframes scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
+/* JS drives transform — no animation property */
 .inner {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: scroll 32s linear infinite;
-}
-
-.inner:hover {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 56px;
+  padding: 0 clamp(28px, 4vw, 64px);
   flex-shrink: 0;
 }
 
 .logo {
-  height: 52px;
+  height: clamp(44px, 5.5vw, 72px);
   width: auto;
-  max-width: 180px;
+  max-width: clamp(120px, 14vw, 200px);
   object-fit: contain;
-  transition: opacity 0.2s;
-}
-
-@media (max-width: 768px) {
-  .item {
-    padding: 0 36px;
-  }
-
-  .logo {
-    height: 40px;
-  }
-}
-
-@media (max-width: 420px) {
-  .item {
-    padding: 0 24px;
-  }
-
-  .logo {
-    height: 32px;
-  }
 }

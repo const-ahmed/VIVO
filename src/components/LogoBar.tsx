@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './LogoBar.module.css';
 
 const CAROUSEL_LOGOS = [
@@ -19,16 +19,52 @@ const CAROUSEL_LOGOS = [
   { name: 'WealthWizards',  src: '/carousel/wealthwizards-logo.png' },
 ];
 
+const SPEED = 1.2; // px per frame at 60 fps ≈ 72 px/s
+
 const LogoBar: React.FC = () => {
-  // Duplicate for seamless loop — animation moves exactly -50% (one full set)
-  const doubled = [...CAROUSEL_LOGOS, ...CAROUSEL_LOGOS];
+  const innerRef  = useRef<HTMLDivElement>(null);
+  const posRef    = useRef(0);
+  const rafRef    = useRef(0);
+  const pausedRef = useRef(false);
+  const loopWidth = useRef(0);
+
+  useEffect(() => {
+    const inner = innerRef.current;
+    if (!inner) return;
+
+    // Measure width of the original slide set before cloning
+    loopWidth.current = inner.scrollWidth;
+
+    // Clone every real slide and append to the track
+    Array.from(inner.children).forEach(slide => {
+      inner.appendChild(slide.cloneNode(true));
+    });
+
+    const tick = () => {
+      if (!pausedRef.current) {
+        posRef.current += SPEED;
+        // Silent teleport — no transition, no CSS animation
+        if (posRef.current >= loopWidth.current) {
+          posRef.current = 0;
+        }
+        inner.style.transform = `translateX(-${posRef.current}px)`;
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
 
   return (
     <section className={styles.section}>
       <p className={styles.label}>Trusted by businesses across the UK and Europe</p>
       <div className={styles.track}>
-        <div className={styles.inner}>
-          {doubled.map((logo, i) => (
+        <div
+          ref={innerRef}
+          className={styles.inner}
+        >
+          {CAROUSEL_LOGOS.map((logo, i) => (
             <div key={i} className={styles.item}>
               <img src={logo.src} alt={logo.name} className={styles.logo} />
             </div>
