@@ -105,9 +105,14 @@
 
 @media (max-width: 640px) {
   .cta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
   }
 }
 

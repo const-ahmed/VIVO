@@ -144,15 +144,34 @@
   }
 }
 
-/* ── Phone: single column ── */
+/* ── Phone: 2×2 table layout ── */
 @media (max-width: 560px) {
   .section {
     padding: 56px 0;
   }
 
   .content {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .step {
+    padding: 24px 16px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step:nth-child(2),
+  .step:nth-child(4) {
+    border-right: none;
+  }
+
+  .step:nth-child(3),
+  .step:nth-child(4) {
+    border-bottom: none;
   }
 
   .title {
