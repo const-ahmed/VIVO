@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import './App.css';
+import DisclaimerModal from './components/DisclaimerModal';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LogoBar from './components/LogoBar';
@@ -12,8 +14,11 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 function App() {
+  const [accepted, setAccepted] = useState(false);
+
   return (
     <div className="page">
+      {!accepted && <DisclaimerModal onAccept={() => setAccepted(true)} />}
       <Navbar />
       <Hero />
       <LogoBar />
