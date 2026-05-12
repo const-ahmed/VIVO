@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+# Vivo Talent Solutions — Landing Page Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An unsolicited redesign of [vivotalent.com](https://vivotalent.com/), built as a portfolio piece for a frontend developer role at Vivo Talent Solutions.
 
-Currently, two official plugins are available:
+The goal was to take their existing site and rebuild it with stronger brand identity, typographic intention, accessibility compliance, and a component architecture that scales. All copy is verbatim from Vivo's own materials. This is not affiliated with or endorsed by Vivo Talent Solutions Ltd.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What changed from the original
 
-## React Compiler
+- **Typography** — Introduced DM Serif Display as the display face for all headings, paired with DM Sans for body text. Chosen for the authority and warmth it brings to a people-first recruitment brand.
+- **New sections** — Added an Our Results block (17.5 years experience, 23% time-to-hire reduction, 1,032 placements) and a How We Work process breakdown — both absent from the original.
+- **Testimonials** — Rebuilt from a static image mosaic into a carousel with a clone-and-teleport RAF loop for seamless infinite scroll.
+- **Logo strip** — Replaced a CSS `@keyframes` marquee with a JavaScript `requestAnimationFrame` loop for a glitch-free infinite scroll reset.
+- **Colour & contrast** — Ran WCAG 2.1 contrast audits across every text/background pairing. Fixed three failures, including the CTA section which was moved to a dark background to resolve a 2.48:1 ratio on the stat number.
+- **Spacing** — Audited and standardised vertical padding site-wide using `clamp()` so every section breathes consistently at every viewport width.
+- **Badge icons** — Every section pill now has an intentionally chosen SVG icon rather than a generic sparkle.
+- **Pricing removed** — Not relevant to how Vivo operates; stripped entirely.
+- **Mobile layout** — Fully responsive across all breakpoints. Hero content centres on small screens, How We Work drops to a 2×2 table grid with dividers.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech
 
-## Expanding the ESLint configuration
+- React 18 + TypeScript
+- Vite
+- CSS Modules
+- No UI library — all components built from scratch
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Run locally
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+For mobile testing on the same network:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev -- --host
 ```

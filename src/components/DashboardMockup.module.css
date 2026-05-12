@@ -349,8 +349,6 @@
   flex-shrink: 0;
 }
 
-/* ── Responsive scaling ── */
-
 /* Tablet: dashboard appears full-width below hero text */
 @media (max-width: 1024px) {
   .wrapper {

@@ -35,7 +35,6 @@
   max-width: 520px;
 }
 
-/* ── Desktop track: circles + connectors spanning full width ── */
 .track {
   display: flex;
   align-items: center;
@@ -63,7 +62,6 @@
   background: var(--border);
 }
 
-/* ── Content grid: 4 perfectly equal columns ── */
 .content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -75,7 +73,6 @@
   flex-direction: column;
 }
 
-/* Mobile circle — hidden on desktop */
 .mobileNum {
   display: none;
   width: 40px;
@@ -121,7 +118,6 @@
   flex-shrink: 0;
 }
 
-/* ── Tablet: 2×2 grid, hide track, show inline circles ── */
 @media (max-width: 1024px) {
   .track {
     display: none;
@@ -137,14 +133,12 @@
   }
 }
 
-/* ── Large phone: tighten gap ── */
 @media (max-width: 768px) {
   .content {
     gap: 32px 24px;
   }
 }
 
-/* ── Phone: 2×2 table layout ── */
 @media (max-width: 560px) {
   .section {
     padding: 56px 0;
@@ -183,7 +177,6 @@
   }
 }
 
-/* ── Small phone ── */
 @media (max-width: 380px) {
   .section {
     padding: 48px 0;
